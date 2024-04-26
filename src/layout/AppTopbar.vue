@@ -21,6 +21,11 @@ onBeforeUnmount(() => {
     unbindOutsideClickListener();
 });
 
+const goToUser= ()=>{
+    console.log('1')
+    router.push({name:'profile'})
+}
+
 const logoUrl = computed(() => {
     return `/layout/images/${layoutConfig.darkTheme.value ? 'logo-white' : 'logo-dark'}.svg`;
 });
@@ -76,7 +81,7 @@ const isOutsideClicked = (event) => {
         </button>
         <div class="layout-topbar-menu" :class="topbarMenuClasses">
             <button class="p-link layout-topbar-button">
-                <Avatar :image=UserAvatarUrl shape="circle" size="large" ></Avatar>
+                <Avatar :image=UserAvatarUrl shape="circle" size="large" @click="goToUser()" ></Avatar>
                 <span>Profile</span>
             </button>
         </div>
