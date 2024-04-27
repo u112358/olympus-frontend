@@ -27,10 +27,22 @@ const router = createRouter({
                     component: () => import('@/views/UserProfile.vue'),
                     meta: { requiresAuth: true }
                 },
+
+                {
+                    path: '/project',
+                    name: 'project',
+                    component: () => import('@/views/projects/MyProject.vue')
+                },
+                {
+                    path: '/project/:id',
+                    name: 'projectDetail',
+                    component: () => import('@/views/projects/ProjectDetail.vue'),
+                    props: true
+                },
                 {
                     path: 'uikit/formlayout',
                     name: 'formlayout',
-                    component: () => import('@/views/uikit/FormLayout.vue'),
+                    component: () => import('@/views/uikit/FormLayout.vue')
                 },
                 {
                     path: 'uikit/input',
@@ -168,11 +180,6 @@ const router = createRouter({
             component: () => import('@/views/pages/NotFound.vue')
         },
 
-        // {
-        //     path: '/auth/login',
-        //     name: 'login',
-        //     component: () => import('@/views/pages/auth/Login.vue')
-        // },
         {
             path: '/auth/access',
             name: 'accessDenied',
@@ -193,7 +200,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
     // 检查路由是否需要认证
-    if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (to.matched.some((record) => record.meta.requiresAuth)) {
         // 这里应调用你的认证服务
         if (!AuthService.isLoggedIn()) {
             // 未登录，重定向到登录页面
@@ -207,6 +214,5 @@ router.beforeEach((to, from, next) => {
         next();
     }
 });
-
 
 export default router;

@@ -6,12 +6,12 @@ import AppMenuItem from './AppMenuItem.vue';
 const model = ref([
     {
         label: 'Home',
-        items: [{ label: '控制台', icon: 'pi pi-fw pi-home', to: '/' }]
+        items: [{ label: '控制台', icon: 'pi pi-fw pi-home', to: '/dashboard' }]
     },
     {
         label: '应用中心',
         items: [
-            { label: '我的项目', icon: 'pi pi-fw pi-id-card', to: '/uikit/formlayout' },
+            { label: '我的项目', icon: 'pi pi-fw pi-id-card', to: '/project' },
             { label: '我的工时', icon: 'pi pi-fw pi-check-square', to: '/uikit/input' },
             // { label: 'Float Label', icon: 'pi pi-fw pi-bookmark', to: '/uikit/floatlabel' },
             // { label: 'Invalid State', icon: 'pi pi-fw pi-exclamation-circle', to: '/uikit/invalidstate' },

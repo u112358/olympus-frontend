@@ -31,7 +31,6 @@
 }
 
 .user-card {
-
     padding: 0 0 5px 0;
 }
 
